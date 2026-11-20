@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contract-report"
+version = "1.0.0"
+description = "Отчёт по договорам с подрядчиками: выплачено и остаток по работам и договорам на дату"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []  # только стандартная библиотека
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+contract-report = "contract_report.cli:main"
+
+[tool.setuptools]
+packages = ["contract_report"]
+
+[tool.pytest.ini_options]
+pythonpath = ["tests"]
+testpaths = ["tests"]
